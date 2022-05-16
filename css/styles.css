@@ -1,6 +1,5 @@
 :root{
     background-color: black;
-    color: white;
     font-family:'Raleway', sans-serif;
     --celeste:#2FCAF0;
 }
@@ -54,7 +53,7 @@ body{
 }
 
 .nav__hamburguer{
-    color: #cacaca;
+    color: #9d9c9c;
 }
 
 /* Carousel */
@@ -85,7 +84,7 @@ body{
 .main__icon{
     height: 40px;
     background-color: var(--celeste);
-    margin: 10px 0;
+    margin: 20px 0;
     border-radius: 0 20px 0 20px;
     display: flex;
     justify-content: center;
@@ -101,7 +100,7 @@ body{
 .card{
     width: 300px;
     background: linear-gradient(360deg, rgb(0, 180, 243) 0%, rgb(47, 210, 243) 100%);
-    outline: 1px solid #6c6c6c;
+    outline: 1px solid #cdcdcd;
     margin: 30px auto;
     padding: 5px;
     display: flex;
@@ -140,14 +139,31 @@ body{
     outline: none;
 }
 
+.form__input:focus{
+    outline: 2px solid var(--celeste);
+}
+
+.form__input--mensaje{
+    height: 100px;
+}
+
 .form__submit{
-    width: 75px;
+    width: 100px;
     height: 40px;
     font-size: 1rem;
     color:#fff;
     margin-top: 10px;
     border-radius: 5px;
     background-color: var(--celeste);
+}
+
+.form__submit{
+    cursor: pointer;
+}
+
+.form__submit:hover{
+    background-color: #fff;
+    color: var(--celeste);
 }
 
 /* Footer */
@@ -171,4 +187,11 @@ body{
     margin: 10px auto;
     display: flex;
     justify-content:space-between;
+}
+.footer__redes a{
+    color: white;
+}
+.footer__redes a:hover{
+    transform: scale(1.2);
+    transition-duration: 0.2s;
 }
