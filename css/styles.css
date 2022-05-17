@@ -23,17 +23,21 @@ body{
     width: 100%;
 }
 
-.container{
-    margin: 0 auto;
-    max-width: 1150px;
-}
 /* Header */
 .header{
     display: flex;
     justify-content: center;
 }
-.nav{
+
+.container{
     width: 100%;
+    max-width: 1150px;
+    padding: 0 25px;
+    margin: 0 auto;
+}
+
+/* Menú de navegacion */
+.nav{
     height: 60px;
     background-color:black;
     position: absolute;
@@ -43,10 +47,10 @@ body{
     justify-content: space-between;
 }
 
+/* Logo */
 .nav__logo{
     width: 1fr;
     height: 60px;
-    margin-left: 20px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -62,29 +66,30 @@ body{
     font-size: 20px;
 }
 
+/* Barra de navegación */
 .nav__menu{
     display: none;
 }
 
-.nav__menu_li{
-    display: inline-block;
+.nav__menu_ul{
+    display: flex;
+    column-gap: 30px;
 }
 
 .nav__menu_li a{
     color: #e1e1e1;
-    padding: 0 20px;
 }
 
 .nav__menu_li a:hover{
     color: #fff;
-    text-decoration: 1px underline #fff;
+    /* text-decoration: 1px underline #fff; */
 }
 
+/* Menú hamburguesa */
 .nav__hamburguer{
     width: 1fr;
-    margin-right: 20px;
 }
-
+/* Menú desplegable */
 .nav__list{
     width: 100%;
     position:relative;
@@ -118,9 +123,9 @@ body{
     width: 100%;
 }
 
-/* Sections */
+/* Contenido central */
 .main__content{
-    margin:30px 20px;
+    margin:30px 0;
 }
 
 .main__title{
@@ -173,7 +178,7 @@ body{
     padding: 0 10px 10px;
 }
 
-/* Contacto */
+/* Formulario de Contacto */
 .main__form{
     margin: 20px auto;
 }
@@ -216,17 +221,7 @@ body{
     color: var(--celeste);
 }
 
-/* .form__submit::before{
-    content: "Hola";
-    color: white;
-    display: block;
-    width: 100px;
-    height: 100px;
-    background-color: black;
-} */
-
 /* Footer */
-
 .footer{
     width: 100%;
     padding: 30px 0;
@@ -253,7 +248,7 @@ body{
     transition-duration: 0.2s;
 }
 
-/* Media Query */
+/* ---------------- Media Query ------------------ */
 @media  (min-width:992px) {
 
     .nav{
