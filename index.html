@@ -13,12 +13,20 @@
     <header>
 
         <nav class="nav container">
-            <div class="nav__logo">
+            <div class="nav__logo" id="inicio">
                 <img src="img/viajes.svg" alt="" class="nav__img">
                 <p class="nav_paragraph">Viajes Chile</p>
             </div>
             <div class="nav__hamburguer">
-                <i class="fa-solid fa-bars fa-2x"></i>
+                <a href="#"><i class="fa-solid fa-bars fa-2x"></i></a>
+            </div>
+            <div class="nav__list">
+                <ul class="nav__items">
+                    <li class="nav__item"><a href="#inicio">Inicio</a></li>
+                    <li class="nav__item"><a href="#quienessomos">Quienes Somos</a></li>
+                    <li class="nav__item"><a href="#destacados">Destacados</a></li>
+                    <li class="nav__item"><a href="#contacto">Contacto</a></li>
+                </ul>
             </div>
         </nav>
 
@@ -32,7 +40,7 @@
 
         <section class="main__content">
 
-            <h2 class="main__title">¿Qui&eacute;nes Somos?</h2>
+            <h2 class="main__title" id="quienessomos">¿Qui&eacute;nes Somos?</h2>
 
             <div class="main__textos">
 
@@ -65,7 +73,7 @@
 
         <section class="main__content">
 
-            <h2 class="main__title">Destacados</h2>
+            <h2 class="main__title" id="destacados">Destacados</h2>
             
                 <div class="card">
                     <img src="img/card1.jpg" alt="" class="card__img">
@@ -91,16 +99,16 @@
         </section>
         <section class="main__content">
 
-            <h2 class="main__title">Contacto</h2>
+            <h2 class="main__title" id="contacto">Contacto</h2>
 
             <div class="main__form">
-                <form action="">
-                    <p class="form__paragraph">Nombre</p>
-                    <input type="text" class="form__input" placeholder="Nombre">
-                    <p class="form__paragraph">Asunto</p>
-                    <input type="text" class="form__input" placeholder="Asunto">
-                    <p class="form__paragraph">Mensaje</p>
-                    <input type="text" class="form__input form__input--mensaje" placeholder="Escribe aqu&iacute; tu mensaje">
+                <form id="form_principal" method="#" action="#">
+                    <label for="nombre" class="form__paragraph">Nombre</label>
+                    <input type="text" id="nombre" class="form__input" placeholder="Nombre" required>
+                    <label for="asunto" class="form__paragraph">Asunto</label>
+                    <input type="text" id="asunto" class="form__input" placeholder="Asunto" required>
+                    <label for="mensaje" class="form__paragraph">Mensaje</label>
+                    <input type="text" id="mensaje" class="form__input form__input--mensaje" placeholder="Escribe aqu&iacute; tu mensaje" required>
                     <input type="submit" class="form__submit" value="Enviar">
                 </form>
             </div>
