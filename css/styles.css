@@ -159,7 +159,7 @@ body{
     max-width: 300px;
     background: linear-gradient(360deg, rgb(0, 180, 243) 0%, rgb(47, 210, 243) 100%);
     outline: 1px solid #cdcdcd;
-    margin: 30px auto;
+    margin: 0 auto;
     padding: 5px;
     display: flex;
     flex-direction: column;
@@ -235,6 +235,9 @@ body{
 }
 
     .footer__title{
+        width: auto;
+        font-size: 1.5em;
+        text-align: center;
         letter-spacing: 2px;
         font-weight: 400;
     }
@@ -243,7 +246,8 @@ body{
         width: 170px;
         margin: 10px auto;
         display: flex;
-        justify-content:space-between;
+        justify-content:center;
+        column-gap: 20px;
     }
 
         .footer__redes a:hover{
@@ -272,8 +276,7 @@ body{
     .main__content{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        row-gap: 1.5rem;
-        column-gap: 1.5rem;
+        gap: 1.5rem;
     }
 
     .main__title{
@@ -285,8 +288,32 @@ body{
         flex-direction: column-reverse;
     }
 
+    .main__content--cards{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card{
+        padding: 0;
+    }
+
     .main__form{
+        width: 90%;
         grid-column: 1/-1;
     }
+
+    .footer{
+        flex-direction:row;
+        justify-content: space-between;
+    }
+
+    .footer__title{
+        font-size: 2em;
+        width: 50%;
+    }
     
+    .footer__redes{
+        width: 50%;
+    }
+
 }
