@@ -159,11 +159,12 @@ body{
     max-width: 300px;
     background: linear-gradient(360deg, rgb(0, 180, 243) 0%, rgb(47, 210, 243) 100%);
     outline: 1px solid #cdcdcd;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 5px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    column-gap: 5rem;
 }
 
     .card__img{
@@ -295,6 +296,7 @@ body{
 
     .card{
         padding: 0;
+        margin: 0 auto;
     }
 
     .main__form{
