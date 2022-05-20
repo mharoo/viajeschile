@@ -3,8 +3,10 @@
     font-family:'Raleway', sans-serif;
     --celeste:#2FCAF0;
 }
-
-*{
+/* Reset */
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
     text-decoration: none;
@@ -23,31 +25,33 @@ body{
     width: 100%;
 }
 
-/* Header */
+/* ......./ Header /....... */
 .header{
     display: flex;
     justify-content: center;
 }
 
 .container{
-    width: 100%;
-    max-width: 1150px;
+    width: 90%;
+    max-width: 1200px;
     padding: 0 25px;
     margin: 0 auto;
 }
 
-/* Menú de navegacion */
+/* ......./ Menú de navegacion /....... */
 .nav{
+    width: 100%;
     height: 60px;
     background-color:black;
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     justify-content: space-between;
+    z-index: 100;
 }
 
-    /* Logo */
+    /* ......./ Logo /....... */
     .nav__logo{
         width: 1fr;
         height: 60px;
@@ -66,7 +70,12 @@ body{
             font-size: 20px;
         }
 
-/* Barra de navegación */
+/* ......./ Menú hamburguesa /....... */
+.nav__hamburguer{
+    width: 1fr;
+}
+
+/* ......./ Barra de navegación /....... */
 .nav__menu{
     display: none;
 }
@@ -77,20 +86,29 @@ body{
     }
 
         .nav__menu_li a{
+            position: relative;
             color: #e1e1e1;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav__menu_li a::before{
+            content: "";
+            width: 0;
+            height: 0.1em;
+            background: #fff;
+            position: absolute;
+            bottom: -0.5em;
+            transition: all 0.3s ease-in-out;
         }
 
         .nav__menu_li a:hover{
             color: #fff;
-            /* text-decoration: 1px underline #fff; */
+        }
+        .nav__menu_li a:hover::before{
+            width: 100%;
         }
 
-/* Menú hamburguesa */
-.nav__hamburguer{
-    width: 1fr;
-}
-
-/* Menú desplegable */
+/* ......./ Menú desplegable /....... */
 .nav__list{
     width: 100%;
     position:relative;
@@ -113,7 +131,7 @@ body{
             text-decoration: 1px underline #fff;
         }
 
-/* Carousel */
+/* ......./ Carousel /....... */
 .carousel{
     width: 100%;
     height: auto;
@@ -124,7 +142,7 @@ body{
         width: 100%;
     }
 
-/* Contenido central */
+/* ......./ Contenido central /....... */
 .main__content{
     margin:30px 0;
 }
@@ -154,7 +172,7 @@ body{
             text-align: justify;
         }
 
-/* Cards */
+/* ......./ Cards /....... */
 .card{
     max-width: 300px;
     background: linear-gradient(360deg, rgb(0, 180, 243) 0%, rgb(47, 210, 243) 100%);
@@ -182,7 +200,7 @@ body{
         padding: 0 10px 10px;
     }
 
-/* Formulario de Contacto */
+/* ......./ Formulario de Contacto /....... */
 .main__form{
     margin: 20px auto;
 }
@@ -225,7 +243,7 @@ body{
             color: var(--celeste);
         }
 
-/* Footer */
+/* ......./ Footer /....... */
 .footer{
     width: 100%;
     padding: 30px 0;
@@ -253,16 +271,22 @@ body{
 
         .footer__redes a:hover{
             transform: scale(1.2);
-            transition-duration: 0.2s;
+            transition: 0.3s; 
         }
 
-/* ---------------- Media Query ------------------ */
+/* ********** / Media Query /********** */
 @media  (min-width:992px) {
 
+    /* oculto menú hamburguesa y muestro nav menú */
     .nav{
+        width: 100%;
         background-color: transparent;
     }
 
+    .nav-black {
+        background-color: black;
+    }
+    
     .nav__hamburguer{
         display:none;
     }
@@ -300,7 +324,7 @@ body{
     }
 
     .main__form{
-        width: 90%;
+        width: 80%;
         grid-column: 1/-1;
     }
 
@@ -317,5 +341,4 @@ body{
     .footer__redes{
         width: 50%;
     }
-
 }
