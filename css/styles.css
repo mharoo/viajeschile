@@ -29,7 +29,7 @@ a{
     border-radius: 25%;
     background-color: #000;
     color: var(--celeste);
-    outline: 2px solid var(--celeste);
+    box-shadow: 0 0 3px 2px var(--celeste);
     transition-duration: .3s;
 }
     #btn_gototop:hover {
@@ -95,8 +95,7 @@ body{
 
 /* ......./ Barra de navegación /....... */
 .nav__menu{
-    opacity: 0;
-    visibility: hidden;
+    display: none;
 }
 
     .nav__menu_ul{
@@ -311,8 +310,7 @@ body{
     }
 
     .nav__menu{
-        opacity: 1;
-        visibility: visible;
+        display: block;
     }
 }
 
