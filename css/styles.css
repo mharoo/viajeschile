@@ -9,15 +9,33 @@
 *::before {
     margin: 0;
     padding: 0;
+    border: 0;
+    outline: 0;
     text-decoration: none;
     list-style: none;
-    border: 0;
     box-sizing:border-box;
 }
 
 a{
     color: white;
 }
+/* Boton ir arriba */
+#btn_gototop{
+    position: fixed;
+    z-index: 100;
+    right: 2em;
+    bottom: 2em;
+    padding: 13px;
+    border-radius: 25%;
+    background-color: #000;
+    color: var(--celeste);
+    outline: 2px solid var(--celeste);
+    transition-duration: .3s;
+}
+    #btn_gototop:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
 
 body{
     background-color: black;
@@ -77,7 +95,8 @@ body{
 
 /* ......./ Barra de navegación /....... */
 .nav__menu{
-    display: none;
+    opacity: 0;
+    visibility: hidden;
 }
 
     .nav__menu_ul{
@@ -284,7 +303,7 @@ body{
     }
 
     .nav-black {
-        background-color: black;
+        background-color:rgba(0, 0, 0, .7);        
     }
     
     .nav__hamburguer{
@@ -292,7 +311,8 @@ body{
     }
 
     .nav__menu{
-        display:block;
+        opacity: 1;
+        visibility: visible;
     }
 }
 
