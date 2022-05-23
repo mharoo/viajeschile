@@ -21,6 +21,7 @@ a{
 }
 /* Boton ir arriba */
 #btn_gototop{
+    display: none;
     position: fixed;
     z-index: 100;
     right: 2em;
