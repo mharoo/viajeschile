@@ -2,6 +2,7 @@
     background-color: black;
     font-family:'Raleway', sans-serif;
     --celeste:#2FCAF0;
+    scroll-behavior: smooth; /* Crea el efecto smooth scrolling (desplazamiento suave a las secciones dentro del index) */
 }
 /* Reset */
 *,
@@ -26,14 +27,15 @@ a{
     z-index: 100;
     right: 2em;
     bottom: 2em;
-    padding: 13px;
+    padding: 5px;
     border-radius: 25%;
-    background-color: #000;
-    color: var(--celeste);
-    box-shadow: 0 0 3px 2px var(--celeste);
+    background: transparent;
+    color: #fff;
+    box-shadow: 0 0 0 1px var(--celeste);
     transition-duration: .3s;
 }
     #btn_gototop:hover {
+        background-color: #000;
         cursor: pointer;
         transform: scale(1.1);
     }
@@ -53,11 +55,9 @@ body{
 .container{
     width: 90%;
     max-width: 1200px;
-    padding: 0 25px;
     margin: 0 auto;
 }
 
-/* ......./ Menú de navegacion /....... */
 .nav{
     width: 100%;
     height: 60px;
@@ -70,33 +70,98 @@ body{
     z-index: 100;
 }
 
-    /* ......./ Logo /....... */
-    .nav__logo{
-        width: 1fr;
-        height: 60px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 10px;
-    }
-
-        .nav__img{
-            height: 70%;
-        }
-
-        .nav_paragraph{
-            font-weight: 500;
-            font-size: 20px;
-        }
-
-/* ......./ Menú hamburguesa /....... */
-.nav__hamburguer{
-    width: 1fr;
+/* ......./ Logo /....... */
+.nav__logo{
+    height: 60px;
+    padding-left: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
 }
 
-/* ......./ Barra de navegación /....... */
+    .nav__img{
+        height: 70%;
+    }
+
+    .nav_paragraph{
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+/* ......./ Menú hamburguesa /....... */
+/* .nav__hamburguer{
+    position: relative;
+    padding-right: 25px;
+    
+} */
+.fa-bars, .fa-times{
+    position: absolute;
+    right: 1.5rem;
+    cursor: pointer;
+    pointer-events: none;
+}
+/* Despliegue de menú mobile */
+.nav input[type="checkbox"]{
+    opacity: 0;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    right: 1.5rem;
+    cursor: pointer;
+}
+.nav input:checked ~ .nav__list{
+    display: block;
+}
+.nav input:checked ~ .fa-bars{
+    display: none;
+}
+.nav input:not(:checked) ~ .fa-times{
+    display: none;
+}
+/* ......./ Menú mobile /....... */
+.nav__list{
+    width: 100%;
+    background-color: rgba(0, 0, 0, .7);
+    display: none;
+}
+
+    .nav__list_ul{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        row-gap: 2rem;
+        margin: 2rem;
+    }
+
+        .nav__list_li a{
+            position: relative;
+            color: #e1e1e1;
+            transition: color 0.3s ease-in-out;
+        }
+        
+        .nav__list_li a::before{
+            content: "";
+            width: 0;
+            height: 0.1em;
+            background: #fff;
+            position: absolute;
+            bottom: -0.5em;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav__list_li a:hover{
+            color: #fff;
+        }
+
+        .nav__list_li a:hover::before{
+            width: 100%;
+        }
+
+/* ......./ Menú Desktop/....... */
 .nav__menu{
     display: none;
+    padding-right: 25px;
 }
 
     .nav__menu_ul{
@@ -123,31 +188,9 @@ body{
         .nav__menu_li a:hover{
             color: #fff;
         }
+
         .nav__menu_li a:hover::before{
             width: 100%;
-        }
-
-/* ......./ Menú desplegable /....... */
-.nav__list{
-    width: 100%;
-    position:relative;
-}
-
-    .nav__items{
-        display: none;
-        background-color: #000;
-        padding: 20px 30px;
-    }
-
-        .nav__item a{
-            display: block;
-            padding: 15px 0;
-            color: #e1e1e1;
-        }
-
-        .nav__item a:hover{
-            color: #fff;
-            text-decoration: 1px underline #fff;
         }
 
 /* ......./ Carousel /....... */
@@ -164,6 +207,7 @@ body{
 /* ......./ Contenido central /....... */
 .main__content{
     margin:30px 0;
+    padding: 0 20px;
 }
 
     .main__title{
@@ -296,6 +340,10 @@ body{
 /* ********** / Media Query /********** */
 @media  (min-width:992px) {
 
+    #btn_gototop{
+        padding: 1em;
+    }
+
     /* oculto menú hamburguesa y muestro nav menú */
     .nav{
         width: 100%;
@@ -306,8 +354,15 @@ body{
         background-color:rgba(0, 0, 0, .7);        
     }
     
-    .nav__hamburguer{
+    /* .nav__hamburguer{
         display:none;
+    } */
+    .nav input[type="checkbox"]{
+        display: none;
+    }
+
+    .fa-bars, .fa-times{
+        display: none;
     }
 
     .nav__menu{
