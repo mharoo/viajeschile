@@ -359,10 +359,14 @@ body{
     } */
     .nav input[type="checkbox"]{
         display: none;
+        opacity: 0;
+        visibility: hidden;
     }
 
     .fa-bars, .fa-times{
         display: none;
+        opacity: 0;
+        visibility: hidden;
     }
 
     .nav__menu{
