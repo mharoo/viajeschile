@@ -363,7 +363,7 @@ body{
         visibility: hidden;
     }
 
-    .fa-bars, .fa-times{
+    .fa-bars, .fa-times, .fa-2x, .fa-3x{
         display: none;
         opacity: 0;
         visibility: hidden;
