@@ -20,6 +20,7 @@
 a{
     color: white;
 }
+
 /* Boton ir arriba */
 #btn_gototop{
     display: none;
@@ -96,7 +97,7 @@ body{
     cursor: pointer;
     pointer-events: none;
 }
-/* Despliegue de menú mobile */
+
 .nav input[type="checkbox"]{
     opacity: 0;
     width: 2rem;
@@ -105,15 +106,20 @@ body{
     right: 1.5rem;
     cursor: pointer;
 }
+
+/* Despliegue de menú mobile */
 .nav input:checked ~ .nav__list{
     display: block;
 }
+
 .nav input:checked ~ .fa-bars{
     display: none;
 }
+
 .nav input:not(:checked) ~ .fa-times{
     display: none;
 }
+
 /* ......./ Menú mobile /....... */
 .nav__list{
     width: 100%;

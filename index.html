@@ -6,8 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/splide.min.css">
     <title>Viajes Chile</title>
     <script src="https://kit.fontawesome.com/7d9d5d8456.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener( 'DOMContentLoaded', function() {
+          var splide = new Splide( '.splide' );
+          splide.mount();
+        } );
+      </script>
 </head>
 <body>
     
@@ -35,7 +42,7 @@
             <!-- Menú mobile -->
             <input type="checkbox">
             <i class="fa fa-bars fa-2x"></i>
-            <i class="fas fa-times fa-3x"></i>
+            <i class="fa fa-times fa-3x"></i>
             <div class="nav__list">
                 <ul class="nav__list_ul">
                     <li class="nav__list_li"><a href="#inicio">Inicio</a></li>
@@ -45,11 +52,20 @@
                 </ul>
             </div>
         </nav>
-
-        <div class="carousel">
+        <!-- Carousel Slider -->
+        <!-- <div class="carousel">
             <img src="img/carousel1.jpg" alt="" class="carousel__img">
-        </div>
-
+        </div> -->
+        <section class="splide" aria-label="Splide Basic HTML Example">
+            <div class="splide__track">
+                  <ul class="splide__list">
+                      <li class="splide__slide"><img src="img/carousel1.jpg" alt="" class="carousel__img"></li>
+                      <li class="splide__slide"><img src="img/carousel2.jpg" alt="" class="carousel__img"></li>
+                      <li class="splide__slide"><img src="img/carousel3.jpg" alt="" class="carousel__img"></li>
+                  </ul>
+            </div>
+          </section>
+        <!-- Fin Carousel Slider -->
     </header>
 
     <main class="container">
@@ -140,10 +156,11 @@
             <a href="#"><i class="fa-brands fa-facebook-square fa-2x"></i></a>
         </div>
     </footer>
-
+    <script src="/js/splide.min.js"></script>
+<!-- Scripts / Jquery-->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="js/script.js"></script>
-
+<!-- Fin scripts -->
 </body>
 </html>
