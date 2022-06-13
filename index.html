@@ -6,33 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/7d9d5d8456.js" crossorigin="anonymous"></script>
     <!-- Carousel css -->
-    <link rel="stylesheet" href="/css/splide.min.css">
-    <script>
-        document.addEventListener( 'DOMContentLoaded', function() {
-          var splide = new Splide( '.splide' );
-          splide.mount();
-        } );
-    </script>
-
+    <link rel="stylesheet" href="/css/carousel.css">
+    <!-- Css -->
+    <link rel="stylesheet" href="css/styles.css">
     <title>Viajes Chile</title>
-    
 </head>
 <body>
     
     <!-- Botón ir arriba -->
     <button id="btn_gototop" title="Ir arriba">
         <i class="fa fa-angle-up fa-2x"></i>
-    </button>    
+    </button>
 
     <header class="header" id="inicio">
 
         <nav class="nav container">
             <a href="index.html" class="nav__logo">
-                <img src="img/viajes.svg" alt="" class="nav__img">
+                <img src="assets/viajes.svg" alt="" class="nav__img">
                 <h1 class="nav_paragraph">Viajes Chile</h1>
             </a>
             <!-- Menú desktop -->
@@ -57,20 +50,22 @@
                 </ul>
             </div>
         </nav>
+
         <!-- Carousel Slider -->
-        <!-- <div class="carousel">
-            <img src="img/carousel1.jpg" alt="" class="carousel__img">
-        </div> -->
-        <section class="splide" aria-label="Splide Basic HTML Example">
-            <div class="splide__track">
-                  <ul class="splide__list">
-                      <li class="splide__slide"><img src="img/carousel1.jpg" alt="" class="carousel__img"></li>
-                      <li class="splide__slide"><img src="img/carousel2.jpg" alt="" class="carousel__img"></li>
-                      <li class="splide__slide"><img src="img/carousel3.jpg" alt="" class="carousel__img"></li>
-                  </ul>
+        <section class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item"><img src="img/carousel1.jpg" alt="" class="carousel__img"></div>
+                <div class="carousel-item"><img src="img/carousel2.jpg" alt="" class="carousel__img"></div>
+                <div class="carousel-item"><img src="img/carousel3.jpg" alt="" class="carousel__img"></div>
             </div>
-          </section>
+            <div class="carousel-controls">
+                <span class="prev"></span>
+                <span class="next"></span>
+            </div>
+            <div class="carousel-indicators"></div>
+        </section>
         <!-- Fin Carousel Slider -->
+
     </header>
 
     <main class="container">
@@ -139,13 +134,15 @@
             <h2 class="main__title" id="contacto">Contacto</h2>
 
             <div class="main__form">
-                <form id="form_principal" method="#" action="#">
+                <form action="php/contact.php" method="post" id="form_principal">
                     <label for="nombre" class="form__paragraph">Nombre</label>
-                    <input type="text" id="nombre" class="form__input" placeholder="" required>
+                    <input type="text" name="nombre" id="nombre" class="form__input" placeholder="" pattern="[A-Z\sa-z]{3,40}" required>
+                    <label for="email" class="form__paragraph">Mail</label>
+                    <input type="email" name="email" id="email" class="form__input" placeholder="" required>
                     <label for="asunto" class="form__paragraph">Asunto</label>
-                    <input type="text" id="asunto" class="form__input" placeholder="" required>
+                    <input type="text" name="asunto" id="asunto" class="form__input" placeholder="" required>
                     <label for="mensaje" class="form__paragraph">Mensaje</label>
-                    <input type="text" id="mensaje" class="form__input form__input--mensaje" placeholder="Escribe aqu&iacute; tu mensaje" required>
+                    <input type="text" name="mensaje" id="mensaje" class="form__input form__input--mensaje" placeholder="Escribe aqu&iacute; tu mensaje" required>
                     <input type="submit" class="form__submit" value="Enviar">
                 </form>
             </div>
@@ -162,11 +159,11 @@
         </div>
     </footer>
 <!-- Script Carousel -->
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.2/dist/js/splide.min.js"></script>
-<!-- Scripts / Jquery-->
+<script src="js/carousel.js"></script>
+<!-- Jquery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<!-- Script js -->
 <script src="js/script.js"></script>
-<!-- Fin scripts -->
 </body>
 </html>

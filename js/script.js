@@ -5,7 +5,7 @@ $(document).scroll( function(e){
   else $("nav").removeClass("nav-black")
 })
 
-//+++++++++ Boton go to top ++++++++++//
+//+++++++++ Botón ir arriba ++++++++++//
 mybutton = document.getElementById("btn_gototop");
 window.onscroll = function() {scrollFunction()};
 // Cuando se hace scroll hacia abajo a los 600px el botón aparece
