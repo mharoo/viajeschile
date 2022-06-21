@@ -16,14 +16,14 @@ function scrollFunction() {
     mybutton.style.display = "none";
   }
 }
-// Función para ir hacia arriba suavemente
+// Se suaviza el desplazamiento
 var scrollToTopBtn = document.getElementById("btn_gototop");
 var rootElement = document.documentElement;
 function scrollToTop() {
   // Scroll to top logic
   rootElement.scrollTo({
     top: 0,
-    behavior: "smooth"
+    behavior: "smooth" //Es necesario tener declarado "scroll-behavior:smooth" en el :root de los estilos
   });
 }
 btn_gototop.addEventListener("click", scrollToTop);

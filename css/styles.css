@@ -1,10 +1,12 @@
+/* Configuración de la raíz */
 :root{
     background-color: black;
     font-family:'Raleway', sans-serif;
     --celeste:#2FCAF0;
-    scroll-behavior: smooth; /* Crea el efecto smooth scrolling (desplazamiento suave a las secciones dentro del index) */
+    scroll-behavior: smooth; /* Crea el efecto smooth scrolling (desplazamiento suave entre las secciones del index) */
 }
-/* Reset */
+
+/* Reseteo de estilos */
 *,
 *::after,
 *::before {
@@ -18,7 +20,7 @@
 }
 
 a{
-    color: white;
+    color:#fff;
 }
 
 /* Boton ir arriba */
@@ -107,20 +109,7 @@ body{
     cursor: pointer;
 }
 
-/* Despliegue de menú mobile */
-.nav input:checked ~ .nav__list{
-    display: block;
-}
-
-.nav input:checked ~ .fa-bars{
-    display: none;
-}
-
-.nav input:not(:checked) ~ .fa-times{
-    display: none;
-}
-
-/* ......./ Menú mobile /....... */
+/* ......./ Menú para móviles /....... */
 .nav__list{
     width: 100%;
     background-color: rgba(0, 0, 0, .7);
@@ -158,6 +147,22 @@ body{
         .nav__list_li a:hover::before{
             width: 100%;
         }
+        .nav__list_li a:active{
+            color: red;
+        }
+
+/* Despliegue de menú hamburguesa */
+.nav input:checked ~ .nav__list{
+    display: block;
+}
+
+.nav input:checked ~ .fa-bars{
+    display: none;
+}
+
+.nav input:not(:checked) ~ .fa-times{
+    display: none;
+}
 
 /* ......./ Menú Desktop/....... */
 .nav__menu{
@@ -193,18 +198,7 @@ body{
         .nav__menu_li a:hover::before{
             width: 100%;
         }
-
-/* ......./ Carousel /....... */
-.carousel{
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-}
-
-    .carousel__img{
-        width: 100%;
-    }
-
+        
 /* ......./ Contenido central /....... */
 .main__content{
     margin: 1.8rem 0;
@@ -357,7 +351,7 @@ body{
         background-color:rgba(0, 0, 0, .7);        
     }
 
-    /* oculto menú hamburguesa y muestro nav menú */
+    /* Oculto menú hamburguesa */
     .nav input:checked ~ .nav__list{
         display: none;
     }
@@ -373,7 +367,7 @@ body{
         opacity: 0;
         visibility: hidden;
     }
-
+    /* Muestro menú Desktop */
     .nav__menu{
         display: block;
     }
