@@ -97,12 +97,12 @@
     .carousel-controls .prev{
         height: 30px;
         width: 30px;
-        left: 3rem;
+        left: 1.5rem;
     }
     
     .carousel-controls .next{
         height: 32px;
         width: 32px;
-        right: 3rem;
+        right: 1.5rem;
     }
 }
