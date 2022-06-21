@@ -7,7 +7,7 @@
     position: relative;
     display: flex;
     justify-content: flex-start;
-    border-radius: 13px;
+    /* border-radius: 13px; */
 }
     .carousel__img{
         width: 100%;
@@ -82,7 +82,7 @@
     background-color: white;
     width: 30px;
     height: 4px;
-    border-radius: 2px;
+    /* border-radius: 2px; */
     opacity: .5;
     cursor: pointer;
     margin: 3px;
